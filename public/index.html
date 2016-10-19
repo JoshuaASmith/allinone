@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
+      <link rel="stylesheet" href="//unpkg.com/tachyons@latest">
     <!--
       Notice the use of %PUBLIC_URL% in the tag above.
       It will be replaced with the URL of the `public` folder during the build.
@@ -27,5 +28,68 @@
       To begin the development, run `npm start`.
       To create a production bundle, use `npm run build`.
     -->
+    <div>
+  <div class="container">
+    <div class="row pa2">
+  <div class="four columns">
+      <input class=" u-full-width pa2 input-reset bg-light-blue bb3 br3 avenir" id="input">
+     </div>
+    </div>
+  <div class="row pa2">
+    <div class="one column dim avenir">
+      <button onclick="press(7)">7</button>
+    </div>
+    <div class="one column dim avenir">
+      <button onclick="press(8)">8</button>
+    </div>
+    <div class="one column dim avenir">
+      <button onclick="press(9)">9</button>
+    </div>
+    <div class="one column dim avenir">
+      <button onclick="press(' / ')">/</button>
+    </div>
+  </div>
+  <div class="row pa2">
+    <div class="one column dim avenir">
+      <button onclick="press(4)">4</button>
+    </div>
+    <div class="one column dim avenir">
+      <button onclick="press(5)">5</button>
+    </div>
+    <div class="one column dim avenir">
+      <button onclick="press(6)">6</button>
+    </div>
+    <div class="one column dim avenir">
+      <button onclick="press(' * ')">*</button>
+    </div>
+  </div>
+  <div class="row pa2">
+    <div class="one column dim avenir">
+      <button onclick="press(1)">1</button>
+    </div>
+    <div class="one column dim avenir">
+      <button onclick="press(2)">2</button>
+    </div>
+    <div class="one column dim avenir">
+      <button onclick="press(3)">3</button>
+    </div>
+    <div class="one column dim avenir">
+      <button onclick="press(' - ')">-</button>
+    </div>
+  </div>
+  <div class="row pa2">
+    <div class="one column dim avenir">
+      <button onclick="press(0)">0</button>
+    </div>
+    <div class="one column dim avenir">
+      <button onclick="clearInput()">AC</button>
+    </div>
+    <div class="one column dim grow avenir">
+      <button onclick="calcInput()">=</button>
+    </div>
+    <div class="one column dim avenir">
+      <button onclick="press(' + ')">+</button>
+    </div>
+  </div>
   </body>
 </html>

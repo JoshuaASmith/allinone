@@ -14,15 +14,15 @@ const generatedGuess = function getRandomIntInclusive (min, max) {
 
 const GuessNumber = React.createClass({
   getInitialState: function () {
-    return { number: generatedAnswer(1,10).toString(),
+    return { number: generatedAnswer(1, 10).toString(),
       guess: '',
       comment: '',
       answer: '',
       computerComment: '',
-      computerNumber: generatedGuess(1,10).toString()}
+      computerNumber: '' }/* generatedGuess(1, 10).toString()} */
   },
   setGuess: function (e) {
-     this.setState({ guess: e.target.value })
+    this.setState({ guess: e.target.value })
   },
   setAnswer: function (e) {
     this.setState({ answer: e.target.value })
@@ -41,9 +41,9 @@ const GuessNumber = React.createClass({
   },
   onAnswer: function (event) {
     if (this.state.answer === this.state.computerNumber) {
-      return this.setState({ computerComment: 'Correct!' })
+      return this.setState({ computerComment: 'Correct!', computerNumber: generatedGuess(1, 10).toString() })
     } else if (this.state.answer !== this.state.computerNumber) {
-      return this.setState({ computerComment: 'You tricked the computer!' })
+      return this.setState({ computerComment: 'You tricked the computer!', computerNumber: generatedGuess(1, 10).toString() })
     }
   },
   render () {
@@ -63,8 +63,9 @@ const GuessNumber = React.createClass({
           value: this.state.answer,
           placeholder: 'Try and trick the computer!'
         }),
-        h('button', { onClick: this.onAnswer }, 'Ask'),
-        h('div', this.state.computerComment)
+        h('button.pill', { onClick: this.onAnswer }, 'Ask'),
+        h('div', this.state.computerComment),
+        h('div', this.state.computerNumber)
       ])
     )
   }
